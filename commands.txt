@@ -1,4 +1,8 @@
 #Commands
 
 ##Angular
--ng serve
+-
+ng serve
+
+-
+ng build --aot  --bh /id/ --op ../scalaServer2/public/javascripts/
