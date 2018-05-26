@@ -6,3 +6,6 @@ ng serve
 
 -
 ng build --aot  --bh /id/ --op ../scalaServer2/public/javascripts/
+
+
+ open -n -a /Applications/Google\ Chrome.app --args --user-data-dir="/Users/larryoke/intelligent_draw_v1/chrome_data" --disable-web-security
