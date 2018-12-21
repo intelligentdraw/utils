@@ -5,7 +5,23 @@
 ng serve
 
 -
+#Copy into scala
 ng build --aot  --bh /id/ --op ../scalaServer2/public/javascripts/
 
 
+# start chrome with disabled security
  open -n -a /Applications/Google\ Chrome.app --args --user-data-dir="/Users/larryoke/intelligent_draw_v1/chrome_data" --disable-web-security
+
+ #Start mongodb
+ docker run --name intelligent_draw -p 27017:27017  -v /Users/larryoke/intelligent_draw_v1/my_mongodb_data:/data/db -d mongo
+
+#Restart mongodb
+docker restart intelligent_draw
+
+#Start MySQL
+docker run --name intelligent_draw_db  -v /Users/larryoke/intelligent_draw_v1/my_mysql_data:/var/lib/mysql  -e MYSQL_DATABASE=intelligent_draw_db  -e MYSQL_ROOT_PASSWORD=Password123  -d  mysql:latest
+
+
+
+ #Copy into UI-server spring boot app
+ ng build --aot  --bh /id/ --op ../ui-server/src/main/resources/static
